@@ -2,7 +2,7 @@
 // loop through that array and console log the name of the movie
 console.log("hello");
 let prevMovies = JSON.parse(localStorage.getItem("prevMovies")) || [];
-
+console.log(prevMovies);
 //1. find the place in the html where the info will go
 // let variable1 = document.getElementById(...)
 //2. create a new element
@@ -11,13 +11,15 @@ let prevMovies = JSON.parse(localStorage.getItem("prevMovies")) || [];
 // variable2.textContent = " .... "
 //4. add that element to the place in the html
 // variable1.appendChild(variable2)
-let variable1 = document.getElementById("images");
-let variable2 = document.createElement("li");
 
-variable2.textContent = prevMovies[0];
+for (let i = 0; i < prevMovies.length; i++) {
+  let variable1 = document.getElementById("images");
+  let variable2 = document.createElement("img");
 
-variable1.appendChild(variable2);
+  variable2.src = prevMovies[i].image;
 
+  variable1.appendChild(variable2);
+}
 for (let i = 0; i < prevMovies.length; i++) {
   console.log(i, prevMovies[i]);
 }
