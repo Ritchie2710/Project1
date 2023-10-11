@@ -11,7 +11,6 @@ const movies = [
     image: "./images/austin powers.j[eg",
     desc: "Austin Powers, a cryogenically frozen British spy from 1960s, is thawed and reinstated when his arch nemesis Dr. Evil returns from space and terrorizes earth with his evil schemes.",
   },
-  ,
   {
     name: "Borat",
     genre: "Comedy",
