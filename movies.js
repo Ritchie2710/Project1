@@ -140,7 +140,7 @@ const movies = [
   {
     name: "John Wick",
     genre: "Action",
-    image: "./images/john ick.jpeg",
+    image: "./images/john Wick.jpeg",
     desc: "John Wick, a retired hitman, is forced to return to his old ways after a group of Russian gangsters steal his car and kill a puppy gifted to him by his late wife.",
   },
   {
@@ -182,7 +182,7 @@ const movies = [
   {
     name: "End Game",
     genre: "Action",
-    image: "./images/end game.jpeg",
+    image: "./images/end game.jpg",
     desc: "After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.",
   },
   {
@@ -212,7 +212,7 @@ const movies = [
   {
     name: "Pulp Fiction",
     genre: "Action",
-    image: "./images/pulp fiction.jpeg",
+    image: "./images/pulp fiction.png",
     desc: "In the realm of underworld, a series of incidents intertwines the lives of two Los Angeles mobsters, a gangster's wife, a boxer and two small-time criminals.",
   },
   {
@@ -324,9 +324,9 @@ const movies = [
     desc: "Harry Potter, an eleven-year-old orphan, discovers that he is a wizard and is invited to study at Hogwarts. Even as he escapes a dreary life and enters a world of magic, he finds trouble awaiting him.",
   },
   {
-    name: "Pretty women",
+    name: "Pretty woman",
     genre: "Drama",
-    image: "./images/pretty women.jpeg",
+    image: "./images/pretty women.png",
     desc: "Edward, a rich entrepreneur, hires Vivian, a prostitute, to accompany him to a few social events. Trouble ensues when he falls in love with her and they try to bridge the gap between their worlds.",
   },
   {
