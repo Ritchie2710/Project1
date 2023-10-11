@@ -141,7 +141,7 @@ const movies = [
   {
     name: "John Wick",
     genre: "Action",
-    image: "./images/john ick.jpeg",
+    image: "./images/john Wick.jpeg",
     desc: "John Wick, a retired hitman, is forced to return to his old ways after a group of Russian gangsters steal his car and kill a puppy gifted to him by his late wife.",
   },
   {
