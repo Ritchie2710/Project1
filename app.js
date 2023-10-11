@@ -5,15 +5,11 @@ const horror = document.getElementById("buttonHorror");
 const drama = document.getElementById("buttonDrama");
 const comedy = document.getElementById("buttonComedy");
 const qText = document.getElementById("qText");
-//
-const filmOneAction = document.getElementById("filmOneAction");
-const filmtwoAction = document.getElementById("filmTwoAction");
-const filmOneHorror = document.getElementById("filmOneHorror");
-const filmtwoHorror = document.getElementById("filmTwoHorror");
-const filmOneDrama = document.getElementById("filmOneDrama");
-const filmtwoDrama = document.getElementById("filmTwoDrama");
-const filmOneComedy = document.getElementById("filmOneComedy");
-const filmtwoComedy = document.getElementById("filmTwoComedy");
+
+const resultMovie = document.getElementById("resultMovie");
+const resultMovieTitle = document.getElementById("resultMovieTitle");
+const resultMovieImage = document.getElementById("resultMovieImage");
+const resultMovieDescrip = document.getElementById("resultMovieDescrip");
 //
 
 function handleAnswer(ans) {
@@ -47,13 +43,13 @@ function handleAnswer(ans) {
     drama.classList.add("hidden");
     comedy.classList.add("hidden");
     getMovie("Drama");
-    qText.textContent = "Maybe these can cheer you up?";
+    qText.textContent = "Maybe this will make you feel better?";
     //
   } else if (ans === "comedy") {
     drama.classList.add("hidden");
     comedy.classList.add("hidden");
     getMovie("Comedy");
-    qText.textContent = "Maybe these can cheer you up?";
+    qText.textContent = "Maybe this can cheer you up?";
   }
 }
 
@@ -102,11 +98,10 @@ filmTwoComedy.addEventListener("click", function () {
 
 let prevMovies = JSON.parse(localStorage.getItem("prevMovies")) || [];
 
-const movie = getMovie("comedy");
-
 function getMovie(genre) {
   let gmovies = [];
   for (i = 0; i < movies.length; i++) {
+    // console.log(movies);
     if (
       movies[i].genre === genre &&
       prevMovies.includes(movies[i].name) == false
@@ -125,5 +120,36 @@ function getMovie(genre) {
 
   localStorage.setItem("prevMovies", JSON.stringify(prevMovies));
 
-  return movie;
+  resultMovieTitle.textContent = movie.name;
+  resultMovieImage.src = movie.image;
+  resultMovieDescrip.textContent = movie.desc;
+
+  return;
+
+  //OR
+
+  const resultMovie = document.getElementById("resultMovie");
+
+  const article = document.createElement("article");
+
+  const h2 = document.createElement("h2");
+  h2.textContent = movie.name;
+  article.appendChild(h2);
+
+  const img = document.createElement("img");
+  img.src = movie.image;
+  img.setAttribute("alt", movie.name);
+  article.appendChild(img);
+
+  const p = document.createElement("p");
+  p.textContent = movie.desc;
+  article.appendChild(p);
+
+  resultMovie.appendChild("article");
+
+  // instead of returing the movie
+
+  // use DOM manipulation to add a title, image and dectiption of your movie to the page
+  // return movie;
 }
+getMovie();
