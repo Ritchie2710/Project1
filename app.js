@@ -102,10 +102,7 @@ function getMovie(genre) {
   let gmovies = [];
   for (i = 0; i < movies.length; i++) {
     // console.log(movies);
-    if (
-      movies[i].genre === genre &&
-      prevMovies.includes(movies[i].name) == false
-    ) {
+    if (movies[i].genre === genre && prevMovies.includes(movies[i]) == false) {
       gmovies.push(movies[i]);
     }
   }
@@ -116,7 +113,7 @@ function getMovie(genre) {
 
   const random = Math.floor(Math.random() * gmovies.length);
   const movie = gmovies[random];
-  prevMovies.push(movie.name);
+  prevMovies.push(movie);
 
   localStorage.setItem("prevMovies", JSON.stringify(prevMovies));
 
