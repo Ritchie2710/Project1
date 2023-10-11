@@ -15,70 +15,6 @@ const filmtwoDrama = document.getElementById("filmTwoDrama");
 const filmOneComedy = document.getElementById("filmOneComedy");
 const filmtwoComedy = document.getElementById("filmTwoComedy");
 //
-// const allAction = []
-// //
-// const allHorror =[]
-// //
-// const allDrama = []
-// //
-// const allComedy = []
-// //
-// function randomAllAction() {
-//   return Math.floor(Math.random() * allAction.length);
-// //
-// function randomAllHorror() {
-//   return Math.floor(Math.random() * allHorror.length);
-// //
-// function randomAllDrama() {
-//   return Math.floor(Math.random() * allDrama.length);
-// //
-// function randomAllComedy() {
-//   return Math.floor(Math.random() * allComedy.length);
-// //
-// function renderAllAction() {
-//   // get 2 indexs from our products array
-//   let filmOneAction = randomAllAction();
-//   let filmTwoAction = randomAllAction();
-
-//   // make sure they aren't the same
-//   while (filmOneAction === filmTwoAction) {
-//     filmTwoAction = randomAllAction();
-
-//   }
-
-//   function renderAllHorror() {
-//     // get 2 indexs from our products array
-//     let filmOneHorror = randomAllHorror();
-//     let filmTwoHorror = randomAllHorror();
-
-//     // make sure they aren't the same
-//     while (filmOneHorror === filmTwoHorror) {
-//       filmTwoHorror = randomAllHorror();
-
-//     }
-
-//     function renderAllDrama() {
-//       // get 2 indexs from our products array
-//       let filmOneDrama = randomAllDrama();
-//       let filmTwoDrama = randomAllDrama();
-
-//       // make sure they aren't the same
-//       while (filmOneDrama === filmTwoDrama) {
-//         filmTwoDrama = randomAllDrama();
-
-//       }
-
-//       function renderAllComedy() {
-//         // get 2 indexs from our products array
-//         let filmOneComedy = randomAllComedy();
-//         let filmTwoComedy = randomAllComedy();
-
-//         // make sure they aren't the same
-//         while (filmOneComedy === filmTwoComedy) {
-//           filmTwoComedy = randomAllComedy();
-//               }
-
-// let buttonContainer = document.getElementById("buttonContainer");
 
 function handleAnswer(ans) {
   if (ans === "happy") {
@@ -98,34 +34,29 @@ function handleAnswer(ans) {
   } else if (ans === "action") {
     action.classList.add("hidden");
     horror.classList.add("hidden");
-    filmOneAction.classList.remove("hidden");
-    filmtwoAction.classList.remove("hidden");
-    qText.textContent = "How about feasting your eyes on one of these?";
+    getMovie("Action");
+    qText.textContent = "How about feasting your eyes on this?";
     //
   } else if (ans === "horror") {
     action.classList.add("hidden");
     horror.classList.add("hidden");
-    filmOneHorror.classList.remove("hidden");
-    filmtwoHorror.classList.remove("hidden");
-    qText.textContent = "How about feasting your eyes on one of these?";
+    getMovie("Horror");
+    qText.textContent = "How about feasting your eyes on this?";
     //
   } else if (ans === "drama") {
     drama.classList.add("hidden");
     comedy.classList.add("hidden");
-    filmOneDrama.classList.remove("hidden");
-    filmtwoDrama.classList.remove("hidden");
+    getMovie("Drama");
     qText.textContent = "Maybe these can cheer you up?";
     //
   } else if (ans === "comedy") {
     drama.classList.add("hidden");
     comedy.classList.add("hidden");
-    filmOneComedy.classList.remove("hidden");
-    filmtwoComedy.classList.remove("hidden");
+    getMovie("Comedy");
     qText.textContent = "Maybe these can cheer you up?";
   }
 }
 
-// putting our handleAnswer in an annonmous prevents the call back from running on page load
 happy.addEventListener("click", function () {
   handleAnswer("happy");
 });
@@ -169,7 +100,30 @@ filmTwoComedy.addEventListener("click", function () {
   handleAnswer("filmTwoComedy");
 });
 
-// renderAllAction()
-// renderAllHorror()
-// renderAllDrama()
-// renderAllComedy()
+let prevMovies = JSON.parse(localStorage.getItem("prevMovies")) || [];
+
+const movie = getMovie("comedy");
+
+function getMovie(genre) {
+  let gmovies = [];
+  for (i = 0; i < movies.length; i++) {
+    if (
+      movies[i].genre === genre &&
+      prevMovies.includes(movies[i].name) == false
+    ) {
+      gmovies.push(movies[i]);
+    }
+  }
+
+  if (gmovies.length === 0) {
+    return null;
+  }
+
+  const random = Math.floor(Math.random() * gmovies.length);
+  const movie = gmovies[random];
+  prevMovies.push(movie.name);
+
+  localStorage.setItem("prevMovies", JSON.stringify(prevMovies));
+
+  return movie;
+}
