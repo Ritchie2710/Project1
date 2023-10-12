@@ -2,6 +2,9 @@ body {
   background-color: black;
   color: #ffffff;
   margin: 0px;
+  cursor: url("images/popcorncursor.png"), auto;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 header {

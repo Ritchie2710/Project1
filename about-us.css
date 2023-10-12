@@ -1,33 +1,67 @@
 body {
-  margin: 0px;
-
-  background-color: black;
+  background-image: url("images/theater.webp");
+  background-color: #cccccc;
   color: bisque;
+  cursor: url("images/popcorncursor.png"), auto;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .topnav {
-  background-color: #333;
   overflow: hidden;
+  width: fit-content;
+  display: flex;
+  border-style: solid;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
+  background-color: #333;
   float: left;
   color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 50px;
+  width: fit-content;
 }
 
+.ceefilm {
+  border-style: solid;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-right: 5px;
+  background-color: #333;
+  font-size: 50px;
+  padding: 14px 16px;
+}
 h1 {
   text-align: center;
   font-size: 60px;
+  color: white;
 }
 
 p {
-  font-size: 20px;
+  background-color: royalblue;
+  border-style: solid;
+  border-radius: 20px;
   text-align: center;
+  width: fit-content;
+  font-size: 30px;
+  color: #ffffff;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pacman {
