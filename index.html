@@ -11,14 +11,26 @@
   <body>
     <div id="buttonContainer">
       <h2 id="qText">Hey, how are you feeling today?</h2>
-      <button id="buttonHappy">Happy</button>
-      <button id="buttonSad">Sad</button>
+      <button id="buttonHappy">
+        <img src="./images/happy emoji.gif" width="180x" height="180px" />
+      </button>
+      <button id="buttonSad">
+        <img src="./images/crying-emoji.gif" width="180px" height="180px" />
+      </button>
 
-      <button class="hidden" id="buttonAction">Action</button>
-      <button class="hidden" id="buttonHorror">Horror</button>
+      <button class="hidden" id="buttonAction">
+        <img src="./images/explosion.gif" width="180px" height="180px" />
+      </button>
+      <button class="hidden" id="buttonHorror">
+        <img src="./images/excorcist.gif" width="180px" height="180px" />
+      </button>
 
-      <button class="hidden" id="buttonDrama">Drama</button>
-      <button class="hidden" id="buttonComedy">Comedy</button>
+      <button class="hidden" id="buttonDrama">
+        <img src="./images/drama.gif" width="180px" height="180px" />
+      </button>
+      <button class="hidden" id="buttonComedy">
+        <img src="./images/comedy.gif" width="180px" height="180px" />
+      </button>
 
       <button class="hidden" id="filmOneAction">filmOneAction</button>
       <button class="hidden" id="filmTwoAction">filmTwoAction</button>
@@ -32,7 +44,7 @@
       <button class="hidden" id="filmOneComedy">filmOneComedy</button>
       <button class="hidden" id="filmTwoComedy">filmTwoComedy</button>
     </div>
-    <div id="resultMovie">
+    <div class="hidden" id="resultMovie">
       <h2 id="resultMovieTitle"></h2>
       <img id="resultMovieImage" src="" alt="" />
       <p id="resultMovieDescrip"></p>

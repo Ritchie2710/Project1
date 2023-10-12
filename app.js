@@ -120,29 +120,29 @@ function getMovie(genre) {
   resultMovieTitle.textContent = movie.name;
   resultMovieImage.src = movie.image;
   resultMovieDescrip.textContent = movie.desc;
-
+  resultMovie.classList.remove("hidden");
   return;
 
   //OR
 
-  const resultMovie = document.getElementById("resultMovie");
+  // const resultMovie = document.getElementById("resultMovie");
 
-  const article = document.createElement("article");
+  // const article = document.createElement("article");
 
-  const h2 = document.createElement("h2");
-  h2.textContent = movie.name;
-  article.appendChild(h2);
+  // const h2 = document.createElement("h2");
+  // h2.textContent = movie.name;
+  // article.appendChild(h2);
 
-  const img = document.createElement("img");
-  img.src = movie.image;
-  img.setAttribute("alt", movie.name);
-  article.appendChild(img);
+  // const img = document.createElement("img");
+  // img.src = movie.image;
+  // img.setAttribute("alt", movie.name);
+  // article.appendChild(img);
 
-  const p = document.createElement("p");
-  p.textContent = movie.desc;
-  article.appendChild(p);
+  // const p = document.createElement("p");
+  // p.textContent = movie.desc;
+  // article.appendChild(p);
 
-  resultMovie.appendChild("article");
+  // resultMovie.appendChild("article");
 
   // instead of returing the movie
 

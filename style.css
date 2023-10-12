@@ -6,3 +6,18 @@ button {
   width: 200px;
   height: 200px;
 }
+body {
+  background-image: url("images/back\ curtain.jpg");
+  background-size: cover;
+}
+
+#resultMovie {
+  background-color: antiquewhite;
+}
+
+#resultMovieTitle {
+}
+#resultMovieImage {
+}
+#resultMovieDescrip {
+}
